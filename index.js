@@ -30,7 +30,11 @@ b.addEventListener('input', (e) => {
   proxy_rgb.b = b.value
 })
 
-effect(() => {
+const stop = effect(() => {
   color.style.backgroundColor = `rgb(${proxy_rgb.r},${proxy_rgb.g}, ${proxy_rgb.b})`;
   showcolor.innerText = `rgb(${proxy_rgb.r},${proxy_rgb.g}, ${proxy_rgb.b})`;
+})
+
+btn.addEventListener('click', () => {
+  stop()
 })
